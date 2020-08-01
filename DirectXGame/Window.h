@@ -10,13 +10,16 @@ public:
 	bool broadcast();
 	bool release();
 	bool isRun();
+
+	RECT getClientWindowRect();
+	void setHWND(HWND hwnd);
 	//events
-	virtual void onCreate()=0;
-	virtual void onUpdate()=0;
+	virtual void onCreate();
+	virtual void onUpdate();
 	virtual void onDestroy();
 	~Window();
 protected:
-	HWND h_hwnd;
+	HWND m_hwnd;
 	bool m_is_run;
 };
 
